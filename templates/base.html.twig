@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/x-icon" href="/img/logo.svg">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand navbar_logo" href="#">
+                    <img src="img/logo.svg" alt="Pin it !"/>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Add nav images later if I have time ! -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link insta_nav" aria-current="page" href="#instagrammable">
+                                <!--<img src="img/instahram_pin.svg" alt="Instagrammable Spot"/> !-->
+                                Instagrammable Spot
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link food_nav" href="#food">
+                                <!--<img src="img/nav_food.svg" alt="Food"/>!-->
+                                Food
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link avtivities_nav" href="#activities">
+                                <!--<img src="img/nav_activities.svg" alt="Activities"/>!-->
+                                Activities
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link wine_nav" href="#wine">
+                                <!--<img src="img/nav_wine.svg" alt="Wine"/>!-->
+                                Wine
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main>
+            {% block body %}{% endblock %}
+            <a id="back-to-top" href="#top"><i class="fas fa-chevron-up"></i></a>
+        </main>
+
+        <footer class="footer">
+            <div class="row">
+                <a href="https://www.departement13.fr/" target="_blank" class="column">
+                    <img src="img/d13.png" alt="d13"/>
+                </a>
+                <a href="https://www.voyage-prive.com" target="_blank" class="column">
+                    <img src="img/voyageprive.png" alt="voyage privé"/>
+                </a>
+                <a href="https://inco-group.co/" target="_blank" class="column">
+                    <img class="smaller" src="/img/inco.png" alt="inco"/>
+                </a>
+            </div>
+            <div class="row">
+                <a href="https://www.myprovence.fr/" target="_blank" class="column">
+                    <img class="smaller" src="/img/provencetourisme.png" alt="my provence"/>
+                </a>
+                <a href="https://code4marseille.fr/" target="_blank" class="column">
+                    <img class="smaller" src="/img/code4marseille.png" alt="code4marseille"/>
+                </a>
+                <a href="https://aws.amazon.com/fr/?nc2=h_lg" target="_blank" class="column">
+                    <img src="/img/AWS.png" alt="aws"/>
+                </a>
+            </div>
+        </footer>
+
+        <!-- fontawesome -->
+        <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+        <!-- Javascript files from the main branch -->
+        <script>
+            var nav = document.querySelector('nav');
+            //navbar color change
+            window.addEventListener('scroll', function(){
+                //Faire défiler le contenu de 100 pixels, cette animation commence
+                if(window.pageYOffset > 100){
+                    nav.classList.add('bg-light','shadow');
+                }else{
+                    nav.classList.remove('bg-light','shadow');
+                }
+            });
+
+            // scroll and arrow appears
+            window.addEventListener('scroll', function(){
+                //this.console.log(window.scrollY);
+
+                if(window.scrollY > 500){
+                    document.getElementById('back-to-top').style.display = 'block';  
+                }else{
+                    document.getElementById('back-to-top').style.display = 'none';
+                }
+
+            });
+
+            
+
+        </script>
+    </body>
+</html>
+
