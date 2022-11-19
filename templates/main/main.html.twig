@@ -39,12 +39,14 @@
     </div>
 
     {% for location in locations %}
-        <div id="videos" class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="card card_container">
-                        <iframe width="420" height="315"src="{{location.videos}}"></iframe>
-                        <a href="{{path("detail", {"id" : location.id} ) }}" class="d-flex justify-content-center detail_button">Details</a>
+        <div class="{{ location.colour }} my-5">
+            <div id="videos" class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex justify-content-center">
+                        <div class="card card_container">
+                            <iframe width="420" height="315" src="{{location.videos}}"></iframe>
+                            <a href="{{path("detail", {"id" : location.id} ) }}" class="d-flex justify-content-center detail_button">Learn more</a>
+                        </div>
                     </div>
                 </div>
             </div>

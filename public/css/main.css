@@ -3,15 +3,25 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300;1,400;1,600&display=swap');
 *{
-    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
 }
 
-p{
+html{
   font-weight:400;
   font-size: 0.8em;
 }
 
-h2{
+body{
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.625;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+h2, h3{
   font-weight:600;
   font-size: 1.1em;
 }
@@ -60,8 +70,8 @@ nav{
 }
 
 #videos .detail_button{
-  color: #00004D;
-  font-weight: 600;
+  color: #000000;
+  font: 1.5em;
   text-decoration: none;
 }
 
@@ -96,6 +106,31 @@ nav{
   text-align: center;
   border-radius: 50%;
   display: none;
+}
+
+/* CSS detail Page*/
+.links .site_link{
+  font-weight: 600;
+}
+
+.detail-text, .links .site_link {
+  color: #F3F3F3; 
+}
+
+.green{
+  background-color:  #00A651;
+}
+
+.blue{
+  background-color: #0282C8;
+}
+
+.yellow{
+  background-color: #FCBF31;
+}
+
+.pink{
+  background-color: #ED354F;
 }
 
 /* CSS Footer */

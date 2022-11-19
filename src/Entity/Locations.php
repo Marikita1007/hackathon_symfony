@@ -29,6 +29,9 @@ class Locations
     #[ORM\Column(length: 255)]
     private ?string $google_map = null;
 
+    #[ORM\Column(length: 50)]
+    private ?string $colour = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -90,6 +93,18 @@ class Locations
     public function setGoogleMap(string $google_map): self
     {
         $this->google_map = $google_map;
+
+        return $this;
+    }
+
+    public function getColour(): ?string
+    {
+        return $this->colour;
+    }
+
+    public function setColour(string $colour): self
+    {
+        $this->colour = $colour;
 
         return $this;
     }
