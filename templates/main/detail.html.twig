@@ -3,11 +3,13 @@
 {% block body %}
     <div class="container {{ location.colour }}">
         <div class="row detail-text">
-            <div class="col-md-4 m-4">
+            <div class="mt-4">
                 <h3 class="text-center mb-4">{{location.name}}</h3>
-                <iframe width="420" height="315" src="{{location.videos}}"></iframe>
             </div>
-            <div class="col-md-8 links">
+            <div class="mb-3 d-flex justify-content-center">
+                <iframe class="location-video" width="800" height="500" src="{{location.videos}}"></iframe>
+            </div>
+            <div class="links">
                 <p>{{location.summary}}</p>
                 <div class="m-4">
                     <a class="site_link m-1" href="{{location.links}}">Website</a>

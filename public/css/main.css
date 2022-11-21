@@ -27,8 +27,42 @@ h2, h3{
 }
 
 /* CSS Navar */
+img.nav-pin1,img.nav-pin2,img.nav-pin3,img.nav-pin4{
+  height: 50%;
+  margin-top: 1em;
+}
+
+img.nav-pin1{
+  width: 15%;
+}
+
+img.nav-pin2{
+  width: 30%;
+}
+
+img.nav-pin3{
+  width: 24%;
+}
+
+img.nav-pin4{
+  width: 30%;
+}
+
+@media (max-width: 767.98px) { 
+  nav .container-fluid{
+    background: #fff; 
+  }
+
+  img.nav-pin1,img.nav-pin2,img.nav-pin3,img.nav-pin4{
+    margin-top: 0!important;
+    display: none;
+  }
+
+}
+
 nav{
-    height: 80px;
+  height: 80px;
+  z-index: 1;
 }
 
 .navbar_logo {
@@ -36,7 +70,7 @@ nav{
     height: 60px;
 }
 
-.insta_nav{
+.insta-nav{
     color: #00A651;
 }
 
@@ -131,6 +165,14 @@ nav{
 
 .pink{
   background-color: #ED354F;
+}
+
+
+@media (max-width: 767.98px) { 
+  .location-video{
+    width: 400px;
+    height: 300px;
+  }
 }
 
 /* CSS Footer */
