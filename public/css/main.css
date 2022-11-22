@@ -142,6 +142,32 @@ nav{
   display: none;
 }
 
+.title-image-pin{
+  width: 8%;
+  height: 8%;
+}
+
+.category-title{
+  font-size: 30px;
+}
+
+.green-title{
+  color:  #00A651;
+}
+
+.blue-title{
+  color: #0282C8;
+}
+
+.yellow-title{
+  color: #FCBF31;
+}
+
+.pink-title{
+  color: #ED354F;
+}
+
+
 /* CSS detail Page*/
 .links .site_link{
   font-weight: 600;

@@ -16,43 +16,44 @@
             <h2>Des expériences les plus inoubliables de la Provence !</h2>
             <p>Inspirez-vous pour votre prochain voyage en Provence ! Profitez de nouvelles vidéos présentant touristiques incroyables dans quatre catégories :
                 (1) Instagrammable Spot, (2) Food, (3) Activities (4) Wine</p>
-                <a class="d-flex flex-row" href="#videos">
+                <a class="d-flex flex-row" href="#green">
                     <img src="img/image1.png" class="img-fluid img-thumbnail img-horizon" alt="Instagrammable Spot">
                     <img src="img/instagram_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Instagrammable Spot Pin">
                 </a>
-                <a class="d-flex flex-row" href="#videos">
-                    <img src="img/image2.png" class="img-fluid img-thumbnail img-horizon" alt="Instagrammable Spot">
-                    <img src="img/activity_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Instagrammable Spot Pin">
+                <a class="d-flex flex-row" href="#yellow">
+                    <img src="img/image2.png" class="img-fluid img-thumbnail img-horizon" alt="Food Spot">
+                    <img src="img/food_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Food Pin">
                 </a>
-                <a class="d-flex flex-row" href="#videos">
-                    <img src="img/image3.png" class="img-fluid img-thumbnail img-horizon" alt="Instagrammable Spot">
-                    <img src="img/food_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Instagrammable Spot Pin">
+                <a class="d-flex flex-row" href="#blue">
+                    <img src="img/image3.png" class="img-fluid img-thumbnail img-horizon" alt="Activities Spot">
+                    <img src="img/activity_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Activities Pin">
                 </a>
-                <a class="d-flex flex-row" href="#videos">
-                    <img src="img/image4.png" class="img-fluid img-thumbnail img-horizon" alt="Instagrammable Spot">
-                    <img src="img/wine_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Instagrammable Spot Pin">
+                <a class="d-flex flex-row" href="#pink">
+                    <img src="img/image4.png" class="img-fluid img-thumbnail img-horizon" alt="Wine Spot">
+                    <img src="img/wine_pin.svg" class="img_pin img-fluid img-thumbnail" alt="Wine Pin">
                 </a>
 
             </div>
         </div>
     </div>
 
-    {% for location in locations %}
-        <div class="{{ location.colour }} my-5">
-            <div id="videos" class="container">
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="card card_container">
-                            <iframe width="420" height="315" src="{{location.videos}}"></iframe>
-                            <a href="{{path("detail", {"id" : location.id} ) }}" class="d-flex justify-content-center detail_button">Learn more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex justify-content-center">
-                        <div class="card card_container">
-                            <iframe width="420" height="315" src="{{location.videos}}"></iframe>
-                            <a href="{{path("detail", {"id" : location.id} ) }}" class="d-flex justify-content-center detail_button">Learn more</a>
+    {# By using slice(), it shows only the limmited number of item #}
+    {% for location in locations|slice(0,4) %}
+        <div id="{{location.category.colour}}" class="d-flex align-items-center">
+            <img
+            class="title-image-pin" src="{{location.category.image}}" alt="Wine"/>
+            {# {{location.category.colour}}-title change font colour #}
+            <h4 class="category-title {{location.category.colour}}-title">{{location.category.name|upper }}</h4>
+        </div>
+        <div class="{{location.category.colour}}">
+            <div class=" my-5">
+                <div id="videos" class="container">
+                    <div class="row">
+                        <div class="col-md-6 d-flex justify-content-center">
+                            <div class="card card_container">
+                                <iframe width="420" height="315" src="{{location.videos}}"></iframe>
+                                <a href="{{path("detail", {"id" : location.id} ) }}" class="d-flex justify-content-center detail_button">Learn more</a>
+                            </div>
                         </div>
                     </div>
                 </div>

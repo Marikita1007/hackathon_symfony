@@ -29,8 +29,10 @@ class Locations
     #[ORM\Column(length: 255)]
     private ?string $google_map = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $colour = null;
+    #[ORM\ManyToOne(inversedBy: 'locations')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Category $category = null;
+
 
     public function getId(): ?int
     {
@@ -97,15 +99,16 @@ class Locations
         return $this;
     }
 
-    public function getColour(): ?string
+    public function getCategory(): ?Category
     {
-        return $this->colour;
+        return $this->category;
     }
 
-    public function setColour(string $colour): self
+    public function setCategory(?Category $category): self
     {
-        $this->colour = $colour;
+        $this->category = $category;
 
         return $this;
     }
+
 }
